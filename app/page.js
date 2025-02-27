@@ -3,14 +3,15 @@ import { FaBuilding, FaHandshake, FaShieldAlt, FaWallet, FaEnvelope, FaGlobe, Fa
 import { HiArrowNarrowRight } from 'react-icons/hi';
 
 export default function Home() {
-  const handleButtonClick = (url) => {
-    window.location.href = url;
+  // Function to handle external links, tel:, and mailto:
+  const handleExternalLink = (url) => {
+    window.open(url, '_blank'); // Opens in a new tab
   };
 
   return (
     <div className="relative flex flex-col items-center min-h-screen bg-zinc-900 text-white p-4">
       {/* Background Design Elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-zinc-900 via-transparent to-zinc-900 opacity-40"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-zinc-900 via-transparent to-zinc-900 opacity-40"></div> */}
       
       {/* Header Image with Fading Effect */}
       <div className="relative w-full h-96 bg-cover bg-center" style={{ backgroundImage: `url('/kaidirlogo.jpg')` }}>
@@ -30,31 +31,31 @@ export default function Home() {
       {/* Icons for Website, Phone, Instagram, Email, and Location */}
       <div className="w-full max-w-md flex justify-center space-x-4">
         <button
-          onClick={() => handleButtonClick('tel:+97142560194')}
+          onClick={() => handleExternalLink('tel:+97142560194')}
           className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center shadow-md hover:bg-zinc-700 transition-all"
         >
           <FaPhone className="text-yellow-400 text-xl" />
         </button>
         <button
-          onClick={() => handleButtonClick('https://www.kadirigold.com')}
+          onClick={() => handleExternalLink('https://www.kadirigold.com')}
           className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center shadow-md hover:bg-zinc-700 transition-all"
         >
           <FaGlobe className="text-yellow-400 text-xl" />
         </button>
         <button
-          onClick={() => handleButtonClick('https://www.instagram.com/kadirigoldjewelleryllc/')}
+          onClick={() => handleExternalLink('https://www.instagram.com/kadirigoldjewelleryllc/')}
           className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center shadow-md hover:bg-zinc-700 transition-all"
         >
           <FaInstagram className="text-yellow-400 text-xl" />
         </button>
         <button
-          onClick={() => handleButtonClick('mailto:info@kadirigold.com')}
+          onClick={() => handleExternalLink('mailto:info@kadirigold.com')}
           className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center shadow-md hover:bg-zinc-700 transition-all"
         >
           <FaEnvelope className="text-yellow-400 text-xl" />
         </button>
         <button
-          onClick={() => handleButtonClick('https://maps.app.goo.gl/tRz4tXwBv1oKqfw96')}
+          onClick={() => handleExternalLink('https://maps.app.goo.gl/tRz4tXwBv1oKqfw96')}
           className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center shadow-md hover:bg-zinc-700 transition-all"
         >
           <FaMapMarkerAlt className="text-yellow-400 text-xl" />
@@ -79,7 +80,7 @@ export default function Home() {
         ].map((item, index) => (
           <button
             key={index}
-            onClick={() => handleButtonClick(item.url)}
+            onClick={() => handleExternalLink(item.url)}
             className="w-full flex items-center justify-between bg-zinc-800 rounded-lg p-4 shadow-md hover:bg-zinc-700 transition-all"
           >
             <div className="flex items-center space-x-4">
@@ -94,13 +95,13 @@ export default function Home() {
       {/* App Store and Play Store Icons */}
       <div className="w-full max-w-md flex justify-center space-x-4 mt-6">
         <button
-          onClick={() => handleButtonClick('https://apps.apple.com/in/app/kadiri-gold-jewellery/id6741804948')}
+          onClick={() => handleExternalLink('https://apps.apple.com/in/app/kadiri-gold-jewellery/id6741804948')}
           className="hover:opacity-80 transition-all"
         >
           <img src="./apple.png" alt="App Store" className="w-32 h-10" />
         </button>
         <button
-          onClick={() => handleButtonClick('https://play.google.com/store/apps/details?id=com.artifitia.kadirigoldbullion&pcampaignid=web_share')}
+          onClick={() => handleExternalLink('https://play.google.com/store/apps/details?id=com.artifitia.kadirigoldbullion&pcampaignid=web_share')}
           className="hover:opacity-80 transition-all"
         >
           <img src="./playyy.png" alt="Play Store" className="w-32 h-14" />
