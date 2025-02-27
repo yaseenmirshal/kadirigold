@@ -42,6 +42,15 @@ export default function Home() {
         ))}
       </div>
 
+       {/* About Section */}
+       <div className="w-full max-w-md bg-zinc-800 rounded-lg p-6 shadow-lg mt-6">
+        <h2 className="text-xl font-bold mb-4 text-yellow-400">About</h2>
+        <p className="text-gray-400">
+          Kadiri Gold is a trusted name in the bullion and jewellery industry, offering premium-quality gold products and exceptional service. Specializing in gold bullion, coins, and exquisite jewellery, we cater to investors and collectors seeking reliability and elegance.
+        </p>
+      </div>
+
+
       {/* Contact Details */}
       <div className="w-full max-w-md space-y-4 mt-6">
         {[
